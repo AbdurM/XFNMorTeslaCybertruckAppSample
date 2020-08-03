@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<neo:NeoFrame xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:neo="clr-namespace:Xamarin.Forms.NeoControls;assembly=Xamarin.Forms.NeoControls"
+             x:Class="TeslaCybertruckAppSample.Views.RectangularSwitch"
+             HorizontalOptions="Start"
+             VerticalOptions="Start"
+             LightShadowColor="{StaticResource PrimaryLightColor}"
+             BackgroundColor="{StaticResource PrimaryDarkColor}"
+             HeightRequest="150"
+             WidthRequest="130">
+</neo:NeoFrame>

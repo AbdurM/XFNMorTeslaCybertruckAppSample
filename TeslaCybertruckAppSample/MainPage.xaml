@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:neo="clr-namespace:Xamarin.Forms.NeoControls;assembly=Xamarin.Forms.NeoControls"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:controls="clr-namespace:TeslaCybertruckAppSample.Views"
+             mc:Ignorable="d"
+             ControlTemplate="{StaticResource PageWithGradient}"
+             x:Class="TeslaCybertruckAppSample.MainPage">
+    <StackLayout Margin="20,50,20,0">
+        <StackLayout.Resources>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </StackLayout.Resources>
+
+        <StackLayout Orientation="Horizontal" Margin="-15,0">
+            <StackLayout.Resources>
+                <Style TargetType="neo:NeoFrame">
+                    <Setter Property="WidthRequest" Value="80"/>
+                    <Setter Property="HeightRequest" Value="80"/>
+                    <Setter Property="CornerRadius" Value="100"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryLightColor}"/>
+                    <Setter Property="LightShadowColor" Value="{StaticResource PrimaryLightColor}"/>
+                    <Setter Property="DarkShadowColor" Value="{StaticResource PrimaryDarkColor}"/>
+                    <Setter Property="ShadowDrawMode" Value="OuterOnly"/>
+                </Style>
+
+                <Style TargetType="yummy:PancakeView">
+                    <Setter Property="BorderThickness" Value="3"/>
+                    <Setter Property="IsClippedToBounds" Value="True"/>
+                    <Setter Property="HeightRequest" Value="60"/>
+                    <Setter Property="WidthRequest" Value="60"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                    <Setter Property="CornerRadius" Value="30"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryDarkColor}"/>
+                </Style>
+            </StackLayout.Resources>
+            <!--Menu Button-->
+            <neo:NeoFrame 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start" >
+                <yummy:PancakeView>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Opacity="0.5" Spacing="5">
+                        <BoxView  HeightRequest="2" BackgroundColor="White" WidthRequest="15"/>
+                        <BoxView  HeightRequest="2" BackgroundColor="White" WidthRequest="5"/>
+                    </StackLayout>
+                </yummy:PancakeView>
+            </neo:NeoFrame>
+            <!--Center Label-->
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <Label
+                    Text="Tesla"
+                    Opacity="0.5"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Medium"/>
+
+                <Label
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Text="Cybertruck"/>
+            </StackLayout>
+            <!--Profile Button-->
+            <neo:NeoFrame HorizontalOptions="End">
+                <yummy:PancakeView>
+                    <Image HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" Source="profile" Opacity="0.5"/>
+                </yummy:PancakeView>
+            </neo:NeoFrame>
+        </StackLayout>
+
+        <Image Source="TeslaPic3"
+               Margin="-30,0"
+               HeightRequest="250"
+               WidthRequest="200"
+               BackgroundColor="BlanchedAlmond"
+               Aspect="AspectFill" />
+
+        <!-- Status Section-->
+        <Label Text="Status" FontSize="Large"/>
+
+        <Grid HorizontalOptions="Start" Margin="0,20,0,0"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.8*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Column="0" Spacing="2" Orientation="Horizontal" Opacity="0.5">
+                <Image Source="batteryIcon" HeightRequest="15" VerticalOptions="Center"/>
+                <Label  Text="Battery"  VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Spacing="3" Orientation="Horizontal" Opacity="0.5">
+                <Image Source="range" HeightRequest="15" VerticalOptions="Center"/>
+                <Label  Text="Range" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="2" Spacing="1" Orientation="Horizontal" Opacity="0.5">
+                <Image Source="temperature" HeightRequest="15" VerticalOptions="Center"/>
+                <Label Text="Temperature" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <Label Grid.Column="0" Grid.Row="1" Text="57%" Padding="17,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="1" Text="368 km" Padding="17,0,0,0"/>
+            <Label Grid.Column="2" Grid.Row="1" Text="27&#186;C" Padding="17,0,0,0"/>
+        </Grid>
+
+        <!--Information Section -->
+        <Label Text="Quick Settings" FontSize="Large" Margin="0,30,0,0"/>
+
+        <!--Rectangular Switches-->
+        <Grid Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="BoxView">
+                    <Setter Property="HorizontalOptions" Value="Start"/>
+                    <Setter Property="HeightRequest" Value="5"/>
+                    <Setter Property="WidthRequest" Value="5"/>
+                    <Setter Property="CornerRadius" Value="2.5"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource CustomBlue}"/>
+                </Style>
+            </Grid.Resources>
+            <controls:RectangularSwitch>
+                <StackLayout Margin="20" Spacing="0">
+                    <BoxView IsVisible="False"/>
+                    <Label Text="Engine" FontSize="Small" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    <Label Text="Sleeping Mode" FontSize="Micro" Opacity="0.5"/>
+                </StackLayout>
+            </controls:RectangularSwitch>
+
+            <controls:RectangularSwitch Grid.Column="1">
+                <StackLayout Margin="20" Spacing="0">
+                    <BoxView/>
+                    <Label Text="Climate" FontSize="Small" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    <Label Text="A/C is set to ON" FontSize="Micro" Opacity="0.5"/>
+                </StackLayout>
+            </controls:RectangularSwitch>
+
+            <controls:RectangularSwitch Grid.Column="2">
+                <StackLayout Margin="20" Spacing="0">
+                    <BoxView IsVisible="True"/>
+                    <Label Text="Tyres" FontSize="Small" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    <Label Text="Low pressure Mode ON" FontSize="Micro" Opacity="0.5"/>
+                </StackLayout>
+            </controls:RectangularSwitch>
+        </Grid>
+
+        <StackLayout Margin="0,30,0,10" Orientation="Horizontal">
+            <Label Text="Navigation" FontSize="Large" />
+            <Label Text="History" FontSize="Medium" Opacity="0.5" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+
+
+        <Frame ControlTemplate="{StaticResource PageWithGradient2}"
+                      Margin="-30,0"
+                      HasShadow="False"
+                      CornerRadius="50"
+                      HeightRequest="150"
+                      Padding="0"
+                      HorizontalOptions="FillAndExpand">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <BoxView Grid.ColumnSpan="2" Margin="20,20,0,0" HeightRequest="3" WidthRequest="60" BackgroundColor="Black" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <Label Margin="30,0,0,0" Grid.Row ="1" Text="Speed Lock is ON" FontAttributes="Bold" FontSize="Large"/>
+                <Label Margin="30,-20,0,0" Opacity="0.5" Grid.Row ="2" Text="Tap to turn off or swipe up for quick setup" FontSize="Small"/>
+
+                <neo:NeoFrame
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Margin="30,-10"
+                    BackgroundColor="{StaticResource CustomBlue}"
+                    HorizontalOptions="EndAndExpand"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    CornerRadius="100"
+                    LightShadowColor="{StaticResource PrimaryLightColor}"
+                   ShadowDrawMode="All"
+                    VerticalOptions="Start">
+                    <Image HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" Source="shutDown"/>
+                </neo:NeoFrame>
+            </Grid>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

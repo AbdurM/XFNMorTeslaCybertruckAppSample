@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<neo:NeoFrame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:neo="clr-namespace:Xamarin.Forms.NeoControls;assembly=Xamarin.Forms.NeoControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TeslaCybertruckAppSample.Views.CircularButtonControl"
+     BackgroundColor="{StaticResource PrimaryDarkColor}"
+                   Elevation="0.30"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    CornerRadius="100"
+                    LightShadowColor="{StaticResource PrimaryLightColor}"
+                    DarkShadowColor="{StaticResource PrimaryDarkColor}"
+                    ShadowDrawMode="All"
+                    VerticalOptions="Start"/>
